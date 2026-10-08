@@ -81,27 +81,42 @@ S.C -> O(n+m)
 
 def medianOf2(a,b):
     n,m = len(a),len(b)
-    c = []
+    
     
     i,j = 0,0    
-    while (i<=n-1 and j<=m-1):
-        if a[i] < b[j]:
-            c.append(a[i])
+    m1 = -1
+    m2 = -1
+    
+    for _ in range((n+m)//2+1):
+        m2 = m1
+        
+        
+        if (i!=n and j!=m):
+            if a[i] < b[j]:
+                m1 = a[i]
+                i += 1
+            else:
+                m1 = b[j]
+                j += 1
+        
+        elif i<n:
+            m1 = a[i]
             i += 1
         else:
-            c.append(b[j])
+            m1 = b[j]
             j += 1
-    
-    if (j<m):
-        c.extend(b[j:])
-    elif (i<n):
-        c.extend(a[i:])
-    
-    print(c)
-    return getMedian(c)    
+        
+    if (n+m)%2 == 1:
+        return m1
+    else:
+        return (m1+m2)/2
+        
 
+"""
+T.C -> O(n+m)
+S.C -> O(1)
 
-    
+"""
 
 
 
