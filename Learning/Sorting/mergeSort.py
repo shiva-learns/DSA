@@ -16,8 +16,8 @@ def merge_array(left,right):
             result.append(left[i])
             i += 1
     
-    if j < n:
-        while(j<n):
+    if j < m:
+        while(j<m):
             result.append(right[j])
             j += 1
     
