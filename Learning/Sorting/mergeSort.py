@@ -32,9 +32,9 @@ def merge_sort(arr):
     
     mid = len(arr)//2
     left_arr = arr[:mid]
-    left_arr = arr[mid:]
+    right_arr = arr[mid:]
     left = merge_sort(left_arr)
-    right = merge_sort(left_arr)
+    right = merge_sort(right_arr)
     
     return merge_array(left,right)
 
@@ -61,5 +61,5 @@ S.C -> O(n)
             
 if __name__=="__main__":
     mylist = [75,29,83,42,16,90,56,34,20,71,88,92,7]
-    merge_sort(mylist)
+    print(merge_sort(mylist))
     print(mylist)
