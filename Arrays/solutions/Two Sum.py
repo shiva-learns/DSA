@@ -19,7 +19,7 @@ Approach: Traversing the list Twice
 
 
 class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]: # type: ignore
         
         map = {}
         for i in range(len(nums)):
